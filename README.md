@@ -1,7 +1,7 @@
 SJYouTubeIDParser
 =================
 
-A small useful library to extract or parse out the YouTube Video ID from a YouTube URL. The library can be used in a ton of scenarios such as using the Video ID for JSON requests via the YouTube API.
+A small useful library to extract or parse out the YouTube Video ID from any YouTube URL. The library can be used in a ton of scenarios such as using the Video ID for JSON requests via the YouTube API.
 ## Usage
 
 ```
@@ -9,7 +9,7 @@ A small useful library to extract or parse out the YouTube Video ID from a YouTu
 ```
 
 ```objc
-//Create NSString object
+//Create a NSString object
 //This will store the YouTube Video ID
 
 NSString *youtubeVideoID = [SJYouTubeIDParser extractYoutubeID:@"YouTube URL GOES HERE"];
