@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A586E8D81978730C00A3C9A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586E8D71978730B00A3C9A4 /* Cocoa.framework */; };
+		A586E8E21978730C00A3C9A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A586E8E01978730C00A3C9A4 /* InfoPlist.strings */; };
+		A586E8E41978730C00A3C9A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A586E8E31978730C00A3C9A4 /* main.m */; };
+		A586E8E81978730C00A3C9A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A586E8E61978730C00A3C9A4 /* Credits.rtf */; };
+		A586E8EB1978730C00A3C9A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A586E8EA1978730C00A3C9A4 /* AppDelegate.m */; };
+		A586E8EE1978730C00A3C9A4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A586E8EC1978730C00A3C9A4 /* MainMenu.xib */; };
+		A586E8F01978730C00A3C9A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A586E8EF1978730C00A3C9A4 /* Images.xcassets */; };
+		A586E8F71978730C00A3C9A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586E8F61978730C00A3C9A4 /* XCTest.framework */; };
+		A586E8F81978730C00A3C9A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586E8D71978730B00A3C9A4 /* Cocoa.framework */; };
+		A586E9001978730C00A3C9A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A586E8FE1978730C00A3C9A4 /* InfoPlist.strings */; };
+		A586E9021978730C00A3C9A4 /* SJYouTubeIDParser_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A586E9011978730C00A3C9A4 /* SJYouTubeIDParser_DemoTests.m */; };
+		A586E981197877DA00A3C9A4 /* SJYouTubeIDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A586E980197877DA00A3C9A4 /* SJYouTubeIDParser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A586E8F91978730C00A3C9A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A586E8CC1978730B00A3C9A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A586E8D31978730B00A3C9A4;
+			remoteInfo = "SJYouTubeIDParser Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A586E90D1978736E00A3C9A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A586E8D41978730B00A3C9A4 /* SJYouTubeIDParser Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SJYouTubeIDParser Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A586E8D71978730B00A3C9A4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A586E8DA1978730C00A3C9A4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A586E8DB1978730C00A3C9A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A586E8DC1978730C00A3C9A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A586E8DF1978730C00A3C9A4 /* SJYouTubeIDParser Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SJYouTubeIDParser Demo-Info.plist"; sourceTree = "<group>"; };
+		A586E8E11978730C00A3C9A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A586E8E31978730C00A3C9A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A586E8E51978730C00A3C9A4 /* SJYouTubeIDParser Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SJYouTubeIDParser Demo-Prefix.pch"; sourceTree = "<group>"; };
+		A586E8E71978730C00A3C9A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A586E8E91978730C00A3C9A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A586E8EA1978730C00A3C9A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A586E8ED1978730C00A3C9A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A586E8EF1978730C00A3C9A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A586E8F51978730C00A3C9A4 /* SJYouTubeIDParser DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SJYouTubeIDParser DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A586E8F61978730C00A3C9A4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A586E8FD1978730C00A3C9A4 /* SJYouTubeIDParser DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SJYouTubeIDParser DemoTests-Info.plist"; sourceTree = "<group>"; };
+		A586E8FF1978730C00A3C9A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A586E9011978730C00A3C9A4 /* SJYouTubeIDParser_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJYouTubeIDParser_DemoTests.m; sourceTree = "<group>"; };
+		A586E97F197877DA00A3C9A4 /* SJYouTubeIDParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJYouTubeIDParser.h; sourceTree = "<group>"; };
+		A586E980197877DA00A3C9A4 /* SJYouTubeIDParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJYouTubeIDParser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A586E8D11978730B00A3C9A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A586E8D81978730C00A3C9A4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A586E8F21978730C00A3C9A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A586E8F81978730C00A3C9A4 /* Cocoa.framework in Frameworks */,
+				A586E8F71978730C00A3C9A4 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A586E8CB1978730B00A3C9A4 = {
+			isa = PBXGroup;
+			children = (
+				A586E8DD1978730C00A3C9A4 /* SJYouTubeIDParser Demo */,
+				A586E8FB1978730C00A3C9A4 /* SJYouTubeIDParser DemoTests */,
+				A586E8D61978730B00A3C9A4 /* Frameworks */,
+				A586E8D51978730B00A3C9A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A586E8D51978730B00A3C9A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A586E8D41978730B00A3C9A4 /* SJYouTubeIDParser Demo.app */,
+				A586E8F51978730C00A3C9A4 /* SJYouTubeIDParser DemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A586E8D61978730B00A3C9A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A586E8D71978730B00A3C9A4 /* Cocoa.framework */,
+				A586E8F61978730C00A3C9A4 /* XCTest.framework */,
+				A586E8D91978730C00A3C9A4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A586E8D91978730C00A3C9A4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A586E8DA1978730C00A3C9A4 /* AppKit.framework */,
+				A586E8DB1978730C00A3C9A4 /* CoreData.framework */,
+				A586E8DC1978730C00A3C9A4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A586E8DD1978730C00A3C9A4 /* SJYouTubeIDParser Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A586E97F197877DA00A3C9A4 /* SJYouTubeIDParser.h */,
+				A586E980197877DA00A3C9A4 /* SJYouTubeIDParser.m */,
+				A586E8E91978730C00A3C9A4 /* AppDelegate.h */,
+				A586E8EA1978730C00A3C9A4 /* AppDelegate.m */,
+				A586E8EC1978730C00A3C9A4 /* MainMenu.xib */,
+				A586E8EF1978730C00A3C9A4 /* Images.xcassets */,
+				A586E8DE1978730C00A3C9A4 /* Supporting Files */,
+			);
+			path = "SJYouTubeIDParser Demo";
+			sourceTree = "<group>";
+		};
+		A586E8DE1978730C00A3C9A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A586E8DF1978730C00A3C9A4 /* SJYouTubeIDParser Demo-Info.plist */,
+				A586E8E01978730C00A3C9A4 /* InfoPlist.strings */,
+				A586E8E31978730C00A3C9A4 /* main.m */,
+				A586E8E51978730C00A3C9A4 /* SJYouTubeIDParser Demo-Prefix.pch */,
+				A586E8E61978730C00A3C9A4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A586E8FB1978730C00A3C9A4 /* SJYouTubeIDParser DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A586E9011978730C00A3C9A4 /* SJYouTubeIDParser_DemoTests.m */,
+				A586E8FC1978730C00A3C9A4 /* Supporting Files */,
+			);
+			path = "SJYouTubeIDParser DemoTests";
+			sourceTree = "<group>";
+		};
+		A586E8FC1978730C00A3C9A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A586E8FD1978730C00A3C9A4 /* SJYouTubeIDParser DemoTests-Info.plist */,
+				A586E8FE1978730C00A3C9A4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A586E8D31978730B00A3C9A4 /* SJYouTubeIDParser Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A586E9051978730C00A3C9A4 /* Build configuration list for PBXNativeTarget "SJYouTubeIDParser Demo" */;
+			buildPhases = (
+				A586E8D01978730B00A3C9A4 /* Sources */,
+				A586E8D11978730B00A3C9A4 /* Frameworks */,
+				A586E8D21978730B00A3C9A4 /* Resources */,
+				A586E90D1978736E00A3C9A4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SJYouTubeIDParser Demo";
+			productName = "SJYouTubeIDParser Demo";
+			productReference = A586E8D41978730B00A3C9A4 /* SJYouTubeIDParser Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A586E8F41978730C00A3C9A4 /* SJYouTubeIDParser DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A586E9081978730C00A3C9A4 /* Build configuration list for PBXNativeTarget "SJYouTubeIDParser DemoTests" */;
+			buildPhases = (
+				A586E8F11978730C00A3C9A4 /* Sources */,
+				A586E8F21978730C00A3C9A4 /* Frameworks */,
+				A586E8F31978730C00A3C9A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A586E8FA1978730C00A3C9A4 /* PBXTargetDependency */,
+			);
+			name = "SJYouTubeIDParser DemoTests";
+			productName = "SJYouTubeIDParser DemoTests";
+			productReference = A586E8F51978730C00A3C9A4 /* SJYouTubeIDParser DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A586E8CC1978730B00A3C9A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = AlphaSoft;
+				TargetAttributes = {
+					A586E8F41978730C00A3C9A4 = {
+						TestTargetID = A586E8D31978730B00A3C9A4;
+					};
+				};
+			};
+			buildConfigurationList = A586E8CF1978730B00A3C9A4 /* Build configuration list for PBXProject "SJYouTubeIDParser Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A586E8CB1978730B00A3C9A4;
+			productRefGroup = A586E8D51978730B00A3C9A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A586E8D31978730B00A3C9A4 /* SJYouTubeIDParser Demo */,
+				A586E8F41978730C00A3C9A4 /* SJYouTubeIDParser DemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A586E8D21978730B00A3C9A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A586E8E21978730C00A3C9A4 /* InfoPlist.strings in Resources */,
+				A586E8F01978730C00A3C9A4 /* Images.xcassets in Resources */,
+				A586E8E81978730C00A3C9A4 /* Credits.rtf in Resources */,
+				A586E8EE1978730C00A3C9A4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A586E8F31978730C00A3C9A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A586E9001978730C00A3C9A4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A586E8D01978730B00A3C9A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A586E8EB1978730C00A3C9A4 /* AppDelegate.m in Sources */,
+				A586E981197877DA00A3C9A4 /* SJYouTubeIDParser.m in Sources */,
+				A586E8E41978730C00A3C9A4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A586E8F11978730C00A3C9A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A586E9021978730C00A3C9A4 /* SJYouTubeIDParser_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A586E8FA1978730C00A3C9A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A586E8D31978730B00A3C9A4 /* SJYouTubeIDParser Demo */;
+			targetProxy = A586E8F91978730C00A3C9A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A586E8E01978730C00A3C9A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A586E8E11978730C00A3C9A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A586E8E61978730C00A3C9A4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A586E8E71978730C00A3C9A4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A586E8EC1978730C00A3C9A4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A586E8ED1978730C00A3C9A4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A586E8FE1978730C00A3C9A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A586E8FF1978730C00A3C9A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A586E9031978730C00A3C9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A586E9041978730C00A3C9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A586E9061978730C00A3C9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SJYouTubeIDParser Demo/SJYouTubeIDParser Demo-Prefix.pch";
+				INFOPLIST_FILE = "SJYouTubeIDParser Demo/SJYouTubeIDParser Demo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A586E9071978730C00A3C9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SJYouTubeIDParser Demo/SJYouTubeIDParser Demo-Prefix.pch";
+				INFOPLIST_FILE = "SJYouTubeIDParser Demo/SJYouTubeIDParser Demo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A586E9091978730C00A3C9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SJYouTubeIDParser Demo.app/Contents/MacOS/SJYouTubeIDParser Demo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SJYouTubeIDParser Demo/SJYouTubeIDParser Demo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SJYouTubeIDParser DemoTests/SJYouTubeIDParser DemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A586E90A1978730C00A3C9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SJYouTubeIDParser Demo.app/Contents/MacOS/SJYouTubeIDParser Demo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SJYouTubeIDParser Demo/SJYouTubeIDParser Demo-Prefix.pch";
+				INFOPLIST_FILE = "SJYouTubeIDParser DemoTests/SJYouTubeIDParser DemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A586E8CF1978730B00A3C9A4 /* Build configuration list for PBXProject "SJYouTubeIDParser Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A586E9031978730C00A3C9A4 /* Debug */,
+				A586E9041978730C00A3C9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A586E9051978730C00A3C9A4 /* Build configuration list for PBXNativeTarget "SJYouTubeIDParser Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A586E9061978730C00A3C9A4 /* Debug */,
+				A586E9071978730C00A3C9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A586E9081978730C00A3C9A4 /* Build configuration list for PBXNativeTarget "SJYouTubeIDParser DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A586E9091978730C00A3C9A4 /* Debug */,
+				A586E90A1978730C00A3C9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A586E8CC1978730B00A3C9A4 /* Project object */;
+}

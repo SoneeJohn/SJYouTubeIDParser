@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>704C8CAD-7A89-4646-A9BA-3F2C764BAB95</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SJYouTubeIDParser Demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D7D44E4B-7822-4D74-9479-920234066EA7</key>
+		<string>https://github.com/SoneeJohn/SJYouTubeIDParser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SJYouTubeIDParser Demo/SJYouTubeIDParser Demo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D7D44E4B-7822-4D74-9479-920234066EA7</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SoneeJohn/SJYouTubeIDParser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D7D44E4B-7822-4D74-9479-920234066EA7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D7D44E4B-7822-4D74-9479-920234066EA7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SJYouTubeIDParser</string>
+		</dict>
+	</array>
+</dict>
+</plist>
