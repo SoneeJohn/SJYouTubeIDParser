@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A586E8D31978730B00A3C9A4"
-               BuildableName = "SJYouTubeIDParser Demo.app"
-               BlueprintName = "SJYouTubeIDParser Demo"
+               BlueprintIdentifier = "A576AF3A19798124003BF206"
+               BuildableName = "SJYouTubeIDParser Demo iOS.app"
+               BlueprintName = "SJYouTubeIDParser Demo iOS"
                ReferencedContainer = "container:SJYouTubeIDParser Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,33 +28,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A586E8F41978730C00A3C9A4"
-               BuildableName = "SJYouTubeIDParser DemoTests.xctest"
-               BlueprintName = "SJYouTubeIDParser DemoTests"
-               ReferencedContainer = "container:SJYouTubeIDParser Demo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A576AF911979815D003BF206"
-               BuildableName = "SJYouTubeIDParser Demo iOSTests.xctest"
-               BlueprintName = "SJYouTubeIDParser Demo iOSTests"
-               ReferencedContainer = "container:SJYouTubeIDParser Demo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A586E8D31978730B00A3C9A4"
-            BuildableName = "SJYouTubeIDParser Demo.app"
-            BlueprintName = "SJYouTubeIDParser Demo"
+            BlueprintIdentifier = "A576AF3A19798124003BF206"
+            BuildableName = "SJYouTubeIDParser Demo iOS.app"
+            BlueprintName = "SJYouTubeIDParser Demo iOS"
             ReferencedContainer = "container:SJYouTubeIDParser Demo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -71,9 +51,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A586E8D31978730B00A3C9A4"
-            BuildableName = "SJYouTubeIDParser Demo.app"
-            BlueprintName = "SJYouTubeIDParser Demo"
+            BlueprintIdentifier = "A576AF3A19798124003BF206"
+            BuildableName = "SJYouTubeIDParser Demo iOS.app"
+            BlueprintName = "SJYouTubeIDParser Demo iOS"
             ReferencedContainer = "container:SJYouTubeIDParser Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -89,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A586E8D31978730B00A3C9A4"
-            BuildableName = "SJYouTubeIDParser Demo.app"
-            BlueprintName = "SJYouTubeIDParser Demo"
+            BlueprintIdentifier = "A576AF3A19798124003BF206"
+            BuildableName = "SJYouTubeIDParser Demo iOS.app"
+            BlueprintName = "SJYouTubeIDParser Demo iOS"
             ReferencedContainer = "container:SJYouTubeIDParser Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

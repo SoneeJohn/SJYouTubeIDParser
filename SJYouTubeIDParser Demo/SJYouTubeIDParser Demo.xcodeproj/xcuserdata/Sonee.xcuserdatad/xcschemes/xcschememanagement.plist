@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SJYouTubeIDParser Demo iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>SJYouTubeIDParser Demo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A576AF3A19798124003BF206</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A576AF5C19798124003BF206</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A576AF741979815D003BF206</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A576AF911979815D003BF206</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A586E8D31978730B00A3C9A4</key>
 		<dict>
 			<key>primary</key>

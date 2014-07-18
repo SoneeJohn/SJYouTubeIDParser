@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface SJYouTubeIDParser : NSObject
+
+//http://www.youtube.com/watch?v=vsxCwsD9HoI&feature=related.
 /**
  Method for retrieving the youtube ID from a youtube URL
  
@@ -22,6 +23,18 @@
  http://www.youtube.com/watch?feature=player_detailpage&v=sapuE9Cui0g_U#t=31s
  */
 
-+ (NSString *)extractYoutubeID:(NSString *)youtubeURL;
+- (NSString *)extractYoutubeID:(NSString *)youtubeURL;
++ (instancetype) defaultParser;
+
+/**
+ *  Gets the video id from a specified video url, and calls a handler upon completion.
+ */
+- (void) getVideoIDWithURL:(NSString *)youtubeURL completionHandler:(void (^)(NSString *videoID, NSError *error))completionHandler;
+
+/**
+ *  Fetches video info from the specified video url, and calls a handler upon completion.
+ 
+ */
+- (void) getVideoInfoFromURL:(NSString *)youtubeURL completionHandler:(void (^)(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long rating,NSDate *uploaded,NSString *uploader, NSError *error))completionHandler;
 
 @end
