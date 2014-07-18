@@ -1,7 +1,7 @@
 SJYouTubeIDParser
 =================
 
-A small useful library to extract or parse out the YouTube Video ID from any YouTube URL. You can also use it to fetch informations about a YouTube video e.g upload date, title, and thumbnail URL etc...
+A small useful library to extract or parse out the YouTube Video ID from any YouTube URL. You can also use it to fetch information about a YouTube video e.g upload date, title, and thumbnail URL etc...
 
 <img src="Screenshots/screenshot.png" width="489" height="216">
 
