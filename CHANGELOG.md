@@ -1,3 +1,9 @@
+#### Version 1.1.1
+
+* Improved the library's usages of ``` NSError```
+* Improved error reporting
+* Updated Demo Project to reflect on the above changes
+
 #### Version 1.1.0
 
 * Added block methods

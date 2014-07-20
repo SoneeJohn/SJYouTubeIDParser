@@ -41,7 +41,8 @@
     } else{
         
         //Error
-        NSError *error = [NSError errorWithDomain:@"Invalid YouTube URL" code:10 userInfo:nil];
+        NSError *error = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:10 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"Invalid YouTube URL" }];
+
         NSLog(@"SJYouTubeIDParser returned error: %@",error);
     }
     return nil;
@@ -64,10 +65,9 @@
     } else{
         
         //Error
-        NSError *error = [NSError errorWithDomain:@"Invalid YouTube URL" code:10 userInfo:nil];
-        NSString *videoIdentification = nil;
+        NSError *error = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:10 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"Invalid YouTube URL" }];
 
-        completionHandler(videoIdentification, error);
+        completionHandler(nil, error);
 
     }
 
@@ -168,17 +168,8 @@
                                       
                                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                        //Handle error
-                                       NSString *youtubeVideoTitle = nil;
-                                       NSURL *thumbnailURL = nil;
-                                       NSString *videoDescription = nil;
-                                       NSString *viewCount = nil;
-                                       NSInteger ratingInt;
-                                       NSString *videoIdentification = nil;
-                                       NSString *uploader = nil;
-                                       NSDate *uploadedDate = nil;
-                                       
-                                       
-                                       completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, ratingInt,uploadedDate, uploader, error);
+                               
+                                       completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
 
                                        
                                    }];
@@ -191,23 +182,24 @@
         
     } else{
         
-        //Invalid YouTube URL
+        //Handle error
         
-        NSError *error = [NSError errorWithDomain:@"Invalid YouTube URL" code:10 userInfo:nil];
-        NSString *youtubeVideoTitle = nil;
-        NSURL *thumbnailURL = nil;
-        NSString *videoDescription = nil;
-        NSString *viewCount = nil;
-        NSInteger ratingInt;
-        NSString *videoIdentification = nil;
-        NSString *uploader = nil;
-        NSDate *uploadedDate = nil;
-        completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, ratingInt,uploadedDate, uploader, error);
+        if ([youtubeURL isEqualToString:@""]) {
+            //URL is nil
+            NSError *error = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:11 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"Please Provide a YouTube URL" }];
+        
+            completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
+
+
+        } else{
+        
+            //Invalid URL
+            completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
 
     }
 }
 
-
+}
 
 
 
