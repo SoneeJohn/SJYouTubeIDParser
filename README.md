@@ -67,4 +67,4 @@ You can also use the new block method
 
 ## License
 
-SJYouTubeIDParser is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
+SJYouTubeIDParser is available under the MIT license. See the [LICENSE](https://github.com/SoneeJohn/SJYouTubeIDParser/blob/master/README.md) file for more information.
