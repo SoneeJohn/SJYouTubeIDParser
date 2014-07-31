@@ -1,3 +1,11 @@
+#### Version 1.1.2
+
+* Small bug fix.
+* Can how report if video is deleted or private.
+* Updated Demo Project to reflect on the above changes
+* Added MIT License.
+
+
 #### Version 1.1.1
 
 * Improved the library's usages of ``` NSError```

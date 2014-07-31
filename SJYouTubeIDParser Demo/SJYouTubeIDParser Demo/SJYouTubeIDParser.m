@@ -6,6 +6,31 @@
 //  Copyright (c) 2014 AlphaSoft. All rights reserved.
 //
 
+//**** License ****//
+/*
+ The MIT License (MIT)
+ 
+ Copyright (c) 2014 Soneé John
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ */
+
 #import "SJYouTubeIDParser.h"
 #import "AFNetworking.h"
 @interface SJYouTubeIDParser ()
@@ -168,8 +193,29 @@
                                       
                                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                        //Handle error
-                               
-                                       completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
+                                       NSInteger statusCode = operation.response.statusCode;
+
+                                       
+                                       if (statusCode == 404) {
+                                           //Video was deleted
+                                           NSError *deletedError = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:20 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"The video requested was deleted."}];
+
+                                           completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, deletedError);
+
+                                           
+                                       } else if (statusCode == 403){
+                                           
+                                          //The video was private
+                                           NSError *privateError = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:30 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"The video requested is private."}];
+
+                                           completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, privateError);
+ 
+                                           
+                                       } else{
+                                          //some other error
+                                           completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
+
+                                       }
 
                                        
                                    }];
@@ -181,25 +227,22 @@
     
         
     } else{
+        // Invalid URL
         
-        //Handle error
-        
-        if ([youtubeURL isEqualToString:@""]) {
-            //URL is nil
-            NSError *error = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:11 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"Please Provide a YouTube URL" }];
-        
-            completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
-
-
-        } else{
-        
-            //Invalid URL
-            completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
-
+        NSError *error = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:10 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"Invalid YouTube URL" }];
+        NSString *youtubeVideoTitle = nil;
+        NSURL *thumbnailURL = nil;
+        NSString *videoDescription = nil;
+        NSString *viewCount = nil;
+        NSInteger ratingInt;
+        NSString *videoIdentification = nil;
+        NSString *uploader = nil;
+        NSDate *uploadedDate = nil;
+        completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, ratingInt,uploadedDate, uploader, error);
     }
 }
 
-}
+
 
 
 

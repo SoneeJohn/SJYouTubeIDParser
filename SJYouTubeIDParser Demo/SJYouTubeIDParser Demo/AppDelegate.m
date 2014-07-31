@@ -136,12 +136,18 @@
               NSLog(@"Invalid URL");
               NSRunAlertPanel(NSLocalizedString(@"Invalid URL", @"Invalid URL alert title"), NSLocalizedString(@"Unable to find any YouTube video with the URL you provided. Your URL should look something like this: http://www.youtube.com/watch?v=VpZmIiIXuZ0", @"Message for invalid URL ALert"), NSLocalizedString(@"OK", @"OK button for invalid URL alert"), nil, nil);
 
-          } else if ([error code] == 11){
-              NSLog(@"URL IS NIL");
+          } else if ([error code] == 20){
+              NSLog(@"Video is deleted");
               [NSApp presentError:error];
 
               
+          } else if ([error code] == 30){
+              NSLog(@"Video is private");
+              [NSApp presentError:error];
+              
           } else{
+
+          
               [NSApp presentError:error];
 
           }
