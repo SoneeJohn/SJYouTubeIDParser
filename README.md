@@ -64,3 +64,7 @@ You can also use the new block method
 - http://www.youtube.com/watch?v=sapuE9Cui0g
 - youtu.be/KFPtWedl7wg_U923
 - http://www.youtube.com/watch?feature=player_detailpage&v=sapuE9Cui0g_U#t=31s
+
+## License
+
+SJYouTubeIDParser is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
