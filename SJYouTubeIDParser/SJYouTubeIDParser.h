@@ -64,4 +64,11 @@ THE SOFTWARE.
  */
 - (void) getVideoInfoFromURL:(NSString *)youtubeURL completionHandler:(void (^)(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long rating,NSDate *uploaded,NSString *uploader, NSError *error))completionHandler;
 
+/** 
+ 
+ *  Fetches video info about a specified Vimeo URL, then calls a handler upon completion.
+
+ */
+-(void)fetchVimeoInfoFromURL: (NSString *)vimeoURL completionHandler: (void (^) (NSString *title, NSString *authorName, NSString *description, NSString *thumbnail, NSString* video_id, NSError *error))completionHandler;
+
 @end

@@ -243,6 +243,94 @@
 }
 
 
+#pragma Vimeo Methods
+
+-(void)fetchVimeoInfoFromURL: (NSString *)vimeoURL completionHandler: (void (^) (NSString *title, NSString *authorName, NSString *description, NSString *thumbnail, NSString* video_id, NSError *error))completionHandler{
+    
+    
+    //We are using Vimeo's Json API to call info on this video
+    //Link to Documentation; http://developer.vimeo.com/apis/oembed
+    
+    //E.g of a JSON request http://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/17892962
+    NSError *error = NULL;
+
+    //Dispatch to Global Queue
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+                   , ^(void) {
+                       
+                       //First we need to format the URL
+                       //The "%3A" characters are very important
+                       NSString *unforURLString = vimeoURL;
+                       NSString *baseString = @"http://vimeo.com/api/oembed.json?url=http%3A//";
+                       //We have to remove the "http://"part or "https://"
+                       
+                       //Check to see what case we are detailing with first
+                       
+                       if ([unforURLString hasPrefix:@"http://"]) {
+                           
+                           //Remove the first 7 characters
+                           unforURLString = [unforURLString substringFromIndex:7];
+
+                       } else if ([unforURLString hasPrefix:@"https://"]){
+                           //Remove the first 8 characters
+                           unforURLString = [unforURLString substringFromIndex:8];
+                           
+                       } else if ([unforURLString rangeOfString:@".com"].location !=NSNotFound){
+                           NSString *tem = [NSString stringWithFormat:@"%@%@", @"http://", vimeoURL];
+                           //Remove the first 7 characters
+
+                           unforURLString = [tem substringFromIndex:7];
+                           
+
+                           
+                       }
+
+                       
+                       NSString *jsonString = [NSString stringWithFormat:@"%@%@",baseString,unforURLString];
+                       
+                       AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+                       [manager GET:jsonString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           //parse out the json data
+                           
+                           //Get Title
+                           NSArray *vimeoVideoTitleArray = [responseObject valueForKey:@"title"];
+                           NSString *vimeoVideoTitle = [vimeoVideoTitleArray description];
+                           
+                           //Get author's name
+                           NSArray *authorNameArray = [responseObject valueForKey:@"author_name"];
+                           NSString *vimeoauthorName = [authorNameArray description];
+                           
+                           //Get description
+                           NSArray *descriptionArray = [responseObject valueForKey:@"description"];
+                           NSString *vimeodescription = [descriptionArray description];
+                           
+                           //Get thumbnail URL
+                           NSArray *thumbnailurlArray = [responseObject valueForKey:@"thumbnail_url"];
+                           NSString *vimeothumbnailurl = [thumbnailurlArray description];
+                           
+                           //Get video ID
+                           
+                           NSArray *videoIDArray = [responseObject valueForKey:@"video_id"];
+                           NSString *videoIDString = [videoIDArray description];
+
+
+
+
+                           completionHandler(vimeoVideoTitle, vimeoauthorName, vimeodescription, vimeothumbnailurl,videoIDString, error);
+
+                       }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+                           completionHandler(nil, nil, nil, nil,nil, error);
+
+                       }];
+                       
+                       
+                   });
+
+    
+    
+}
 
 
 

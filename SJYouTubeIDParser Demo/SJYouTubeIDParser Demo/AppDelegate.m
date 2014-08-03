@@ -13,6 +13,17 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
+    SJYouTubeIDParser *parser = [SJYouTubeIDParser defaultParser];
+    
+    [parser fetchVimeoInfoFromURL:@"vimeo.com/76979871" completionHandler:^(NSString *title, NSString *authorName, NSString *description, NSString *thumbnail, NSString *video_id, NSError *error) {
+        
+        NSLog(@"Video title is: %@",title);
+        NSLog(@"Author Name is :%@",authorName);
+        NSLog(@"Description :%@",description);
+        NSLog(@"Thumbnail URL :%@",thumbnail);
+        NSLog(@"Video ID %@",video_id);
+    }];
 }
 
 - (IBAction)extractAction:(id)sender {
