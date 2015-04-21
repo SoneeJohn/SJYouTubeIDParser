@@ -10,7 +10,7 @@
 /*
  The MIT License (MIT)
  
- Copyright (c) 2014 Soneé John
+ Copyright (c) 2015 Soneé John
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -34,17 +34,31 @@
 #import "SJYouTubeIDParser.h"
 #import "AFNetworking.h"
 @interface SJYouTubeIDParser ()
+
+
 @end
 
 @implementation SJYouTubeIDParser
+
 + (instancetype) defaultParser
 {
 	static SJYouTubeIDParser *defaultParser;
 	static dispatch_once_t once;
 	dispatch_once(&once, ^{
 		defaultParser = [self new];
+
 	});
 	return defaultParser;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        self.thumbnailQuailty = 3;
+    }
+    return self;
 }
 
 - (NSString *)extractYoutubeID:(NSString *)youtubeURL
@@ -97,8 +111,12 @@
     }
 
 }
-- (void) getVideoInfoFromURL:(NSString *)youtubeURL completionHandler:(void (^)(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long rating, NSDate *uploaded,NSString *uploader, NSError *error))completionHandler{
+- (void) getVideoInfoFromURL:(NSString *)youtubeURL completionHandler:(void (^)(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long likeCount, long long dislikeCount, NSDate *uploaded,NSString *uploader, NSError *error))completionHandler{
     
+    if([self.APIKey length] >0){
+        
+   
+   
     NSError *error = NULL;
     //Create a NSRegularExpression object
     NSRegularExpression *regexExp = [NSRegularExpression regularExpressionWithPattern:@"(?<=v(=|/))([-a-zA-Z0-9_]+)|(?<=youtu.be/)([-a-zA-Z0-9_]+)" options:NSRegularExpressionCaseInsensitive error:&error];
@@ -117,78 +135,115 @@
                                    // http://gdata.youtube.com/feeds/api/videos/<Video ID HERE>?v=2&alt=jsonc
                                    
                                    //..1
-                                   NSString *jsonString = [NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos/%@?v=2&alt=jsonc",videoIdentification];
+                                   
+                               //https://www.googleapis.com/youtube/v3/videos?part=snippet%@+statistics&id=%@&key=%@
+
+                                   
+                                   NSString *constString = @"%2C";
+                                   NSString *jsonString = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/videos?part=snippet%@+statistics&id=%@&key=%@",constString,videoIdentification, self.APIKey];
                                    
                                    // Fetch Json info
                                     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
                                    [manager GET:jsonString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                        //parse out the json data
                                        
+                                       NSDictionary *dict = (NSDictionary *)responseObject;
+
+                                       NSMutableDictionary *parseResults = [[NSMutableDictionary alloc] initWithDictionary:dict];
                                        
-                                       // Root JSON Array
-                                       NSArray *mainJsonData = [responseObject objectForKey:@"data"];
+                                       
+                                       @try {
+                                          // Code that can potentially throw an exception
+                                       
                                        
                                        //Get video Title
-                                       NSArray *youtubeVideoTitleArray = [mainJsonData valueForKey:@"title"];
-                                       NSString *youtubeVideoTitle = [youtubeVideoTitleArray description];
+                                        NSString *youtubeVideoTitle = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"title"];
+                                       
                                        
                                        //Get URL for thumbnail
-                                       NSArray *thumbnail = [mainJsonData valueForKey:@"thumbnail"];
-                                       NSArray *hQTHumb = [thumbnail valueForKey:@"hqDefault"];
-                                       
-                                       // Get URL as string
-                                       NSString *thumbnailString = [hQTHumb description];
-                                       
-                                       //Convert to String
-                                       NSURL *thumbnailURL = [NSURL URLWithString:thumbnailString];
-                                       
+                                      
+                                       NSURL *thumbnailURL;
+                                       if (self.thumbnailQuailty == 1) {
+                                           //default
+                                           thumbnailURL = [NSURL URLWithString:[[[[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"thumbnails"] objectForKey:@"default"]valueForKey:@"url"]];//default
+                                           
+                                       } else if (self.thumbnailQuailty == 2){
+                                           //Medium
+                                           
+                                           thumbnailURL = [NSURL URLWithString:[[[[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"thumbnails"] objectForKey:@"medium"]valueForKey:@"url"]];//Medium
+                                           
+                                           
+                                       } else if (self.thumbnailQuailty == 3){
+                                           //High
+                                           
+                                           thumbnailURL = [NSURL URLWithString:[[[[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"thumbnails"] objectForKey:@"high"]valueForKey:@"url"]];//high
+                                           
+                                       } else{
+                                           
+                                           //Fall back to default
+                                           
+                                           thumbnailURL = [NSURL URLWithString:[[[[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"thumbnails"] objectForKey:@"default"]valueForKey:@"url"]];//default
+                                           
+                                       }
                                        
                                        
                                        
                                        //Get video Description
-                                       NSArray *videoDescriptionArray = [mainJsonData valueForKey:@"description"];
-                                       NSString *videoDescription = [videoDescriptionArray description];
+                                       NSString *videoDescription = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"description"];
                                        
                                        //Get View Count
-                                       NSArray *viewCountArray = [mainJsonData valueForKey:@"viewCount"];
-                                       NSString *viewCount = [viewCountArray description];
+                                       NSString *viewCount = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"statistics"] objectForKey:@"viewCount"];
                                        
-                                       //Get Rating
-                                       NSArray *ratingArray = [mainJsonData valueForKey:@"rating"];
-                                       NSString *rating = [ratingArray description];
+                                       //Get likeCount
+                                       NSString *likeCount = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"statistics"] objectForKey:@"likeCount"];
                                        
-                                       NSInteger ratingInt = [rating intValue];
+                                       NSInteger likeCountInt = [likeCount intValue];
+                                       
+                                       
+                                       //Get dislikeCount
+                                       NSString *dislikeCount = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"statistics"] objectForKey:@"dislikeCount"];
+                                       
+                                       NSInteger dislikeCountInt = [dislikeCount intValue];
+                                       
                                        
                                        //Get uploaded date
-                                       NSArray *uploadedArray = [mainJsonData valueForKey:@"uploaded"];
-                                       NSString *uploaded = [uploadedArray description];
-                                       //
+                                       NSDate *upld = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"publishedAt"];
                                        
-                                       NSString *optimizatedString;
-                                       optimizatedString = [uploaded substringToIndex:[uploaded length] - 14];
+                                       NSString *myDate = [[NSString stringWithFormat:@"%@", upld] substringToIndex:10];
                                        
+                                       NSDateFormatter* df_utc = [[NSDateFormatter alloc] init];
+                                       [df_utc setDateFormat:@"yyyy-MM-dd"];
+                                       upld = [df_utc dateFromString:myDate];
                                        
-                                       NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-                                       [dateFormat setDateFormat:@"yyyy-MM-dd"];
-                                       
-                                       
-                                       NSString* string= optimizatedString;
-                                       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                                       [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-                                       NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-                                       [dateFormatter setTimeZone:gmt];
-                                       
-                                       NSDate *uploadedDate = [dateFormatter dateFromString:string];
+                                       NSDate *uploadedDate = [df_utc dateFromString:myDate];
                                        
                                        
                                        // Get uploader
-                                       NSArray *uploaderArray = [mainJsonData valueForKey:@"uploader"];
-                                       NSString *uploader = [uploaderArray description];
+                                       NSString *uploader = [[[[parseResults objectForKey:@"items"] objectAtIndex:0] objectForKey:@"snippet"] objectForKey:@"channelTitle"];
                                        
                                        
                                        
-                                       completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, ratingInt,uploadedDate, uploader, error);
+                                       completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, likeCountInt,dislikeCountInt,uploadedDate, uploader, error);
+                                       }@catch (NSException *exception) {
+                                           //Handle an exception thrown in the @try block
+                                           
+                                           if ([parseResults objectForKey:@"items"] == nil || [[parseResults objectForKey:@"items"]count] == 0) {
+                                               
+                                               NSError *unavailableError = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:50 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"This video is unavailable."}];
+                                               
+                                               completionHandler(nil, nil, nil, nil,nil, 0, 0,nil, nil, unavailableError);
+
+                                           } else{
+                                           
+                                           NSError *unknownError = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:60 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"An known error occurred"}];
+                                           
+                                           completionHandler(nil, nil, nil, nil,nil, 0, 0,nil, nil, unknownError);
+                                               
+                                           }
+
+                                       }
                                        
+
                                        
                                       
                                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -200,7 +255,7 @@
                                            //Video was deleted
                                            NSError *deletedError = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:20 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"The video requested was deleted."}];
 
-                                           completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, deletedError);
+                                           completionHandler(nil, nil, nil, nil,nil, 0, 0,nil, nil, deletedError);
 
                                            
                                        } else if (statusCode == 403){
@@ -208,12 +263,12 @@
                                           //The video was private
                                            NSError *privateError = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:30 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"The video requested is private."}];
 
-                                           completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, privateError);
+                                           completionHandler(nil, nil, nil, nil,nil, 0,0,nil, nil, privateError);
  
                                            
                                        } else{
                                           //some other error
-                                           completionHandler(nil, nil, nil, nil,nil, 0,nil, nil, error);
+                                           completionHandler(nil, nil, nil, nil,nil, 0,0,nil, nil, error);
 
                                        }
 
@@ -221,10 +276,6 @@
                                    }];
                                    
                                });
-        
-                    
-        
-    
         
     } else{
         // Invalid URL
@@ -234,18 +285,34 @@
         NSURL *thumbnailURL = nil;
         NSString *videoDescription = nil;
         NSString *viewCount = nil;
-        NSInteger ratingInt;
+        NSInteger likeCountInt;
+        NSInteger dislikeCountInt;
+
         NSString *videoIdentification = nil;
         NSString *uploader = nil;
         NSDate *uploadedDate = nil;
-        completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, ratingInt,uploadedDate, uploader, error);
+        completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, likeCountInt,dislikeCountInt,uploadedDate, uploader, error);
     }
+    } else{
+        
+        NSLog(@"Please enter your YouTube API Key");
+        
+        NSError *error = [NSError errorWithDomain:@"com.AlphaSoft.SJYouTubeIDParser" code:40 userInfo:@{ NSLocalizedFailureReasonErrorKey : @"YouTube API Key Not Specified" }];
+        NSString *youtubeVideoTitle = nil;
+        NSURL *thumbnailURL = nil;
+        NSString *videoDescription = nil;
+        NSString *viewCount = nil;
+        NSInteger likeCountInt;
+        NSInteger dislikeCountInt;
+        
+        NSString *videoIdentification = nil;
+        NSString *uploader = nil;
+        NSDate *uploadedDate = nil;
+        completionHandler(videoIdentification, youtubeVideoTitle, thumbnailURL, videoDescription,viewCount, likeCountInt,dislikeCountInt,uploadedDate, uploader, error);
+
+            }
+
 }
-
-
-
-
-
 
 
 @end

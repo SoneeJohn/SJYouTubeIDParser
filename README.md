@@ -3,7 +3,7 @@ SJYouTubeIDParser
 
 A small useful library to extract or parse out the YouTube Video ID from any YouTube URL. You can also use it to fetch information about a YouTube video e.g upload date, title, and thumbnail URL etc...
 
-<img src="Screenshots/screenshot.png" width="489" height="216">
+<img src="Screenshots/screenshot.png" width="654" height="1184">
 
 ## Requirements
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking)
@@ -42,13 +42,12 @@ You can also use the new block method
     }];
 ```
 ## Get information about a YouTube Video
-**Note**:The block will be called on a BACKGROUND THREAD, so you need to dispatch UI updates onto the main thread.
-``` objc
+**Note**:You need a YouTube Data [API Key](https://developers.google.com/youtube/v3/getting-started) to use this method.
 
 //Set API Key
 youtubeParser.APIKey = @"YOUR KEY";
 
-[youtubeParser getVideoInfoFromURL:[self.textField stringValue] completionHandler:^(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long likeCount, long long dislikeCount, NSDate *uploaded, NSString *uploader, NSError *error) {
+[youtubeParser getVideoInfoFromURL:@"http://www.youtube.com/watch?v=fmTpgSMJ96c" completionHandler:^(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long likeCount, long long dislikeCount, NSDate *uploaded, NSString *uploader, NSError *error) {
         
         if (error == nil) {
             // No error
