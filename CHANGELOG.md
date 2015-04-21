@@ -1,4 +1,4 @@
-#### Version 1.2.0 Beta 1
+#### Version 1.2.0 
 
 * Updated to YouTube API V3
 * Updated Screenshot (OS X Yosemite)
