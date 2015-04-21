@@ -1,3 +1,12 @@
+#### Version 1.2.0 Beta 1
+
+* Updated to YouTube API V3
+* Updated Screenshot (OS X Yosemite)
+* Add **SJYouTubeIDParserThumbnailQuailty** property
+* Added **APIKey** property. 
+* **Note**: You need to specify this if you wish to fetch info about YouTube videos
+* Updated Demo project to reflect the above changes
+
 #### Version 1.1.2
 
 * Small bug fix.

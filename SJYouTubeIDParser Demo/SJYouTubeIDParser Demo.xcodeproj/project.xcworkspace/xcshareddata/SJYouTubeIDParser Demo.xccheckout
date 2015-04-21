@@ -10,31 +10,31 @@
 	<string>SJYouTubeIDParser Demo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D7D44E4B-7822-4D74-9479-920234066EA7</key>
+		<key>B391A709C32B54DF9230A7F0855C6D41283D7205</key>
 		<string>https://github.com/SoneeJohn/SJYouTubeIDParser.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SJYouTubeIDParser Demo/SJYouTubeIDParser Demo.xcodeproj/project.xcworkspace</string>
+	<string>SJYouTubeIDParser Demo/SJYouTubeIDParser Demo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D7D44E4B-7822-4D74-9479-920234066EA7</key>
+		<key>B391A709C32B54DF9230A7F0855C6D41283D7205</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SoneeJohn/SJYouTubeIDParser.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D7D44E4B-7822-4D74-9479-920234066EA7</string>
+	<string>B391A709C32B54DF9230A7F0855C6D41283D7205</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D7D44E4B-7822-4D74-9479-920234066EA7</string>
+			<string>B391A709C32B54DF9230A7F0855C6D41283D7205</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SJYouTubeIDParser</string>
+			<string>SJYouTubeIDParser%20(Develop)</string>
 		</dict>
 	</array>
 </dict>

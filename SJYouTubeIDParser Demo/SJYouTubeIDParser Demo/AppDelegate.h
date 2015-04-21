@@ -30,6 +30,8 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTextField *likesLabel;
+@property (weak) IBOutlet NSTextField *dislikesLabel;
 
 @property (weak) IBOutlet NSTextField *textField;
 - (IBAction)extractAction:(id)sender;

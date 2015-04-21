@@ -9,6 +9,7 @@ A small useful library to extract or parse out the YouTube Video ID from any You
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 - Runs on iOS 6.0 and later
 - Runs on OS X 10.8 and later
+- YouTube Data [API Key](https://developers.google.com/youtube/v3/getting-started) (For fetching video info)
 
 ## Usage
 
@@ -43,12 +44,16 @@ You can also use the new block method
 ## Get information about a YouTube Video
 **Note**:The block will be called on a BACKGROUND THREAD, so you need to dispatch UI updates onto the main thread.
 ``` objc
-    [youtubeParser getVideoInfoFromURL:@"http://www.youtube.com/watch?v=fmTpgSMJ96c" completionHandler:^(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long rating, NSDate *uploaded, NSString *uploader, NSError *error) {
+
+//Set API Key
+youtubeParser.APIKey = @"YOUR KEY";
+
+[youtubeParser getVideoInfoFromURL:[self.textField stringValue] completionHandler:^(NSString *videoID, NSString *videoTitle, NSURL *thumbnailURL, NSString *videoDescription, NSString *viewCount, long long likeCount, long long dislikeCount, NSDate *uploaded, NSString *uploader, NSError *error) {
         
         if (error == nil) {
             // No error
             //you can now get YouTube video's
-            //video ID, thumbnail URL, video description, view count,rating, upload date, and the uploader
+            //video ID, thumbnail URL, video description, view count,like count, dislike count, upload date, and the uploader
 
         
         } else{
